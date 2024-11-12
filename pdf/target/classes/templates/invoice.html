@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+</head>
+    <body>
+        <table style="width: 100%; border-collapse: collapse; margin: 0; margin-bottom: -1px;">
+            <tr>
+                <td style="width: 50%; text-align: center; border: 2px solid black; padding: 2px;">
+                    <div style="text-align: left; display: inline-block; padding: 10px 0;">
+                        <p style="margin: 4px;">Seller:</p>
+                        <p style="margin: 4px;" th:text="${content.seller}"></p>
+                        <p style="margin: 4px;" th:text="${content.sellerAddress}"></p>
+                        <p style="margin: 4px;" th:text="${content.sellerGstin}"></p>
+                    </div>
+                </td>
+                <td style="width: 50%; text-align: center; border: 2px solid black; padding: 2px;">
+                    <div style="text-align: left; display: inline-block; padding: 10px 0;">
+                        <p style="margin: 4px;">Buyer:</p>
+                        <p style="margin: 4px;" th:text="${content.buyer}"></p>
+                        <p style="margin: 4px;" th:text="${content.buyerAddress}"></p>
+                        <p style="margin: 4px;" th:text="${content.buyerGstin}"></p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 0;">
+            <tr>
+                <th style="width: 35%; text-align: center; border: 2px solid black; padding: 10px;">Name</th>
+                <th style="text-align: center; border: 2px solid black; padding: 10px;">Quantity</th>
+                <th style="text-align: center; border: 2px solid black; padding: 10px;">Rate</th>
+                <th style="text-align: center; border: 2px solid black; padding: 10px;">Amount</th>
+            </tr>
+            <tr th:each="item : ${content.items}">
+                <td style="text-align: center; border: 2px solid black; padding: 10px;" th:text="${item.name}"></td>
+                <td style="text-align: center; border: 2px solid black; padding: 10px;" th:text="${item.quantity}"></td>
+                <td style="text-align: center; border: 2px solid black; padding: 10px;" th:text="${item.rate}"></td>
+                <td style="text-align: center; border: 2px solid black; padding: 10px;" th:text="${item.amount}"></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="border: 2px solid black; padding: 30px;"></td>
+            </tr>
+        </table>
+    </body>
+</html>

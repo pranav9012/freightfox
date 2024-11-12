@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Invoice</title>
+</head>
+    <body>
+        <iframe th:src="@{/pdf/{filename}(filename=${pdfName})}" width="100%" height="600px"></iframe>
+        <br>
+        <p th:text="${pdfName}"></p>
+        <a th:href="@{/download/{filename}(filename=${pdfName})}" download>Download PDF</a>
+    </body>
+</html>
