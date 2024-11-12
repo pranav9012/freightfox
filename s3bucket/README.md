@@ -30,3 +30,8 @@ This Spring Boot application provides REST APIs for managing files stored in an 
 ![s3download](readme_assests/downloadTest.png)
 - First the username/filename prefix is searched in the bucket and if present, we download the file else return file not found.
 - Since everything in s3 is an object, so to imitate the folder like behaviour the username and filename are concatenated with file path separator and then that exact phrase is searched as prefix.
+
+
+### Notes
+
+- Kindly, add your own S3 Access Key, Secret key, region, and bucketname in application.properties before running the project.
